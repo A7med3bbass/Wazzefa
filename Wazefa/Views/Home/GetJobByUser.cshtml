@@ -1,0 +1,42 @@
+﻿@model IEnumerable<JobsForYou.Models.ApplyJobs>
+
+<div class="container">
+    <div class="row">
+        <h2>All Jobs You Are Applyed it</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.job.JobTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.message)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.applyTime)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.job.JobTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.message)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.applyTime)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                        @Html.ActionLink("Details", "DetailsForJobs", new { id = item.id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,185 @@
+﻿@model JobsForYou.Models.Job
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_FirstLayOut.cshtml";
+}
+
+<div class="reg">
+    <div class="container">
+        <div class="row">
+
+            <h4>Edit Job</h4>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <div class="alert alert-danger" id="error" style="display:none"></div>
+                    <hr />
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(model => model.JobId)
+                    @Html.HiddenFor(model => model.JobImage)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.JobTitle, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.JobTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.JobTitle)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Company, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Company, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Company)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.JobRequired, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.JobRequired, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.JobRequired)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CareerLevel, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("CareerLevel", (IEnumerable<SelectListItem>)ViewBag.CareerLevel, null, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CareerLevel)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.JobType, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("JobType", (IEnumerable<SelectListItem>)ViewBag.JobType, null, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.JobType)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.JobDesc, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.JobDesc, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.JobDesc)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.JobSalary, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.JobSalary, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.JobSalary)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Vacancies, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Vacancies, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Vacancies)
+                        </div>
+                    </div>
+
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.TimeAdd, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.TimeAdd, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.TimeAdd)
+                            </div>
+                        </div>*@
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AboutJob, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.AboutJob, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.AboutJob)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Experience, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Experience, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Experience)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.JobImage, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="file" name="file" id="jobImg" />
+                            @Html.ValidationMessageFor(model => model.JobImage)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CatNo, "CatNo", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @*@Html.DropDownList("CatNo", String.Empty, new { })*@
+                            @Html.DropDownList("CatNo", (IEnumerable<SelectListItem>)ViewBag.CatNo, null, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CatNo)
+                        </div>
+                    </div>
+
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.UserId, "UserId", new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("UserId", String.Empty)
+                                @Html.ValidationMessageFor(model => model.UserId)
+                            </div>
+                        </div>*@
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-default" id="save" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Ui/Js/jquery.js"></script>
+<script>
+    $(function () {
+        $("#save").click(function () {
+            ////// Check If Input Is Empty
+            if ($("#jobImg").val() != "") {
+
+                // Check To Image Extention
+                var filename = document.getElementById("jobImg").value;
+                var extention = filename.substr(filename.lastIndexOf('.') + 1);
+                var validex = ['jpg', 'jpeg', 'png', 'gif'];
+                if ($.inArray(extention, validex) == -1) {
+                    $("#error").fadeIn();
+                    $("#error").append(" Please ! Select a correct image extension, for example ('jpg', 'png', 'jpeg', 'gif')");
+                    return false;
+                }
+
+                // Check To Image Size
+                var myfileSize = document.getElementById("jobImg").files[0].size / 1024 / 1024;
+                if (myfileSize > 2) {
+                    $("#error").fadeIn();
+                    $("#error").append(" Please! Select an image that is less than 2 MB");
+                    return false;
+                }
+
+            }
+
+        });
+    });
+</script>
+
+
+
+

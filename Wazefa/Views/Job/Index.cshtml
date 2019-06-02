@@ -1,0 +1,43 @@
+﻿@model IEnumerable<JobsForYou.Models.Job>
+
+@{
+    ViewBag.Title = "Our Jobs";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="alert alert-info">
+                <h2>This Is All Jobs For Your Company</h2>
+                <p>@Html.ActionLink("Create New", "Create", new { @class = "btn btn-primary" })</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="job-show">
+        @foreach (var job in Model)
+        {
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="con">
+                        <div class="cat-list">
+                            <div class="cat-details">
+                                <h4><a href="#">@job.JobTitle</a></h4>
+                                <p class="parag">@job.JobDesc<span> ' posted <time class="timeago" datetime="@job.TimeAdd"></time></span></p>
+                            </div>
+                            <div class="pic">
+                                <img src="~/JobImages/@job.JobImage" class="thumbnail" />
+                            </div>
+                        </div>
+                        <hr />
+                        @Html.ActionLink("Edit", "Edit", new { id = job.JobId }) |
+                        @Html.ActionLink("Details", "Details", new { id = job.JobId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = job.JobId })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

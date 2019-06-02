@@ -1,0 +1,30 @@
+﻿@model IEnumerable<JobsForYou.Models.Job>
+
+<div class="container">
+    <div class="row">
+        <h4>Search Results ...</h4>
+
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="con">
+                        <div class="cat-list">
+                            <div class="cat-details">
+                                <h4><a href="#">@item.JobTitle</a></h4>
+                                <p class="parag">@item.JobDesc<span> ' 6 days ago</span></p>
+                            </div>
+                            <div class="pic">
+                                <img src="~/JobImages/@item.JobImage" class="thumbnail" />
+                            </div>
+                        </div>
+                        <hr />
+                        @Html.ActionLink("more details", "Details", new { jobId = item.JobId }, new { @class = "my-btn-details" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

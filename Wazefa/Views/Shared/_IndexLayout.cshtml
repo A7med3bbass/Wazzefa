@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="~/Fonts/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Css/site.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="Header">
+        <div class="OverLay">
+            <nav class="navbar navbar-default nav-index">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed"
+                                data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand brand-index" href="~/Home/Index">WUZZEFA</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle In" data-toggle="dropdown"
+                                   role="button" aria-haspopup="true"
+                                   aria-expanded="false">Browse Jobs<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="~/job/Jobs">Jobs</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="In" href="#">Search For Jobs</a></li>
+                        </ul>
+                        @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { @class = "navbar-form navbar-left" }))
+                        {
+                            <div class="form-group">
+                                <input type="text" class="form-control search" placeholder="Search" name="SearchName">
+                            </div>
+                                <button type="submit" class="btn btn-default search"><i class="fa fa-search"></i></button>
+                        }
+
+                        @Html.Partial("~/Views/Shared/_nav.cshtml")
+                    </div>
+                </div>
+            </nav>
+            <div class="Header-Container">
+                <div class="Video-Container">
+                    <video preload="none" autoplay="autoplay" loop="loop">
+                        <source src="~/WebImages/vid.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="arrow">
+            <i class="fa fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <div class="feat" id="fe">
+           <div class="container">
+               <h2>Join Egypt's Top Companies</h2>
+               <section class="customer-logos slider">
+                   <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+                   <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+                   <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+                   <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+                   <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+                   <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+                   <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+                   <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
+               </section>
+           </div>
+       </div>
+
+    <div class="SearchByCat">
+        <div class="container">
+            <h2 class="ser-h2">Find Jobs By Career Level</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="Box">
+                        <img src="~/WebImages/Search-img/soft.jpg" alt="">
+                        <div class="Over">                        
+                            <h5 class="Upper">IT/Software Developer</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="Box">
+                        <img src="~/WebImages/Search-img/med.jpg" alt="">
+                        <div class="Over">
+                            <h5 class="Upper">Medical Jobs</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="Box">
+                        <img src="~/WebImages/Search-img/art.jpg" alt="">
+                        <div class="Over">
+                            <h5 class="Upper">Art/Design/Creative</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="Box">
+                        <img src="~/WebImages/Search-img/fashion.jpg" alt="">
+                        <div class="Over">
+                            <h5 class="Upper">Fashion Jobs</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="Join-Us text-center">
+        <div class="container">
+            <h2>Get ready for more opportunities!</h2>
+            <p>You are minutes away from the right job.</p>
+            <button class="btn-join">Join Now</button>
+        </div>
+    </div>
+
+    <div class="SearchByCat">
+        <div class="container">
+            <h2 class="ser-h2">Find Jobs By Job Type</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="Box">
+                        <img src="~/WebImages/Search-img/soft.jpg" alt="">
+                        <div class="Over">
+                            <h5 class="Upper">IT/Software Developer</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="Box">
+                        <img src="~/WebImages/Search-img/med.jpg" alt="">
+                        <div class="Over">
+                            <h5 class="Upper">Medical Jobs</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="Box">
+                        <img src="~/WebImages/Search-img/art.jpg" alt="">
+                        <div class="Over">
+                            <h5 class="Upper">Art/Design/Creative</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="Box">
+                        <img src="~/WebImages/Search-img/fashion.jpg" alt="">
+                        <div class="Over">
+                            <h5 class="Upper">Fashion Jobs</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="CategoryLinks">
+        <div class="container">
+            <h2 class="ser-h2">All Categories For Jobs</h2>
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="u">
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                        <li><a href="#">It/SoftWare Developement</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            @RenderBody()
+
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-xs-12 col-md-4">
+                            <div class="brand-foot">
+                                <div class="bnd">
+                                    <a href="#"><h3>WUZZEFA</h3></a>
+                                </div>
+                                <div class="footer-link">
+                                    <h5> Employers and Recruiters, go to our <span><a href="#">RECRUITMENT SERVICES.</a></span></h5>
+                                </div>
+                                <div class="mem-direc">
+                                    <h4>Members Directory:</h4>
+                                    <a href="#">A</a>
+                                    <a href="#">B</a>
+                                    <a href="#">C</a>
+                                    <a href="#">D</a>
+                                    <a href="#">E</a>
+                                    <a href="#">F</a>
+                                    <a href="#">G</a>
+                                    <a href="#">H</a>
+                                    <a href="#">I</a>
+                                    <a href="#">J</a>
+                                    <a href="#">K</a>
+                                    <a href="#">L</a>
+                                    <a href="#">M</a>
+                                    <a href="#">N</a>
+                                    <a href="#">O</a>
+                                    <a href="#">P</a>
+                                    <a href="#">Q</a>
+                                    <a href="#">R</a>
+                                    <a href="#">S</a>
+                                    <a href="#">T</a>
+                                    <a href="#">U</a>
+                                    <a href="#">V</a>
+                                    <a href="#">W</a>
+                                    <a href="#">X</a>
+                                    <a href="#">Y</a>
+                                    <a href="#">Z</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-xs-12 col-md-4">
+                            <div class="my-links">
+                                <h4>Links</h4>
+                                <ul class="ul-one">
+                                    <li><a href="#">Career Resources</a></li>
+                                    <li><a href="#">WUZZEFA Coaches</a></li>
+                                    <li><a href="#">WUZZEFA Meetups</a></li>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Recruitment Services</a></li>
+                                    <li><a href="#">RSS</a></li>
+                                </ul>
+                                <ul class="ul-two">
+                                    <li><a href="#">Partners</a></li>
+                                    <li><a href="#">Sitemap</a></li>
+                                    <li><a href="~/Home/ContactUs">Contact Us</a></li>
+                                    <li><a href="#">Privacy, Cookies, Terms & Conditions</a></li>
+                                    <li><a href="#">وظائف مصر</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-xs-12 col-md-4">
+                            <div class="soc">
+                                <h4>Follow Us</h4>
+                                <div class="social-footer">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-youtube"></i></a>
+                                </div>
+                                <div class="all-right">
+                                    <h6>© 2019 WUZZEFA. All Rights Reserved. Owned by <a href="#">BasharSoft LLC.</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer -->
+            <script src="~/JS/jquery.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+            <script src="~/JS/bootstrap.min.js"></script>
+            <script src="~/JS/jquery.timeago.js"></script>
+            <script src="~/JS/JsForSite.js"></script>
+</body>
+</html>

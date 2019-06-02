@@ -1,0 +1,105 @@
+﻿@model JobsForYou.Models.Job
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_FirstLayOut.cshtml";
+}
+
+<div class="container">
+    <div class="job-show">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="con">
+                        <div class="cat-list">
+                            <div class="cat-details">
+                                <h2><a href="#">@Model.JobTitle</a></h2>
+                                <h6>@Model.Company</h6>
+                                <p><span>Friday 22:15 am</span></p>
+                            </div>
+                            <div class="pic">
+                                <img src="~/JobImages/@Model.JobImage" class="thumbnail" />
+                            </div>
+                        </div>
+                        <hr />
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.JobId }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="job-show">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="con">
+                    <div class="cat-list cat-bord">
+                        <table class="table table-bordered ss">
+                            <tr>
+                                <td>
+                                    <dl><dt>Experience Needed:</dt><dd>@Model.Experience</dd></dl>
+                                </td>
+                                <td>
+                                    <dl><dt>Career Level:</dt><dd>@Model.CareerLevel</dd></dl>
+                                </td>
+                                <td>
+                                    <dl><dt>Job Type:</dt><dd>@Model.JobType</dd></dl>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <dl><dt>Salary:</dt><dd>@Model.JobSalary</dd></dl>
+                                </td>
+                                <td>
+                                    <dl><dt>Vacancies:</dt><dd>@Model.Vacancies</dd></dl>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="about-job">
+                       About the Job
+                    </div>
+                    <div class="about-job-desc">
+                        @Model.AboutJob
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="job-show">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="con">
+                    <div class="about-job">
+                        Job Requirements
+                    </div>
+                    <div class="about-job-desc">
+                        @Model.JobRequired
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="job-show">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="con">
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_inline_share_toolbox"> Share This Job With Friends</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cda5f8463e7d617"></script>
+

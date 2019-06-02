@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoff" }))
+    {
+        @Html.AntiForgeryToken()
+    
+    var db = new test.Models.ApplicationDbContext();
+    var userId = User.Identity.GetUserId();
+    var CurruntUser = db.Users.Where(a=>a.Id==userId).SingleOrDefault();
+        <ul class="nav navbar-nav navbar-right">
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="~/UserImages/@CurruntUser.UserImage" class="profile-image img-circle"> @CurruntUser.UserName <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        @if (CurruntUser.UserType == "Work")
+                        {
+                            <a href="~/Home/GetJobByUser"><i class="fa fa-briefcase"></i> Your Jobs Application</a>
+                        }
+                        else if (CurruntUser.UserType == "Hire")
+                        {
+                            <a href="~/Job/index"><i class="fa fa-briefcase"></i> Your Jobs</a>
+                            <a href="~/Job/Create"><i class="fa fa-plus-square"></i> Create Job Now</a>
+                            <a href="~/Home/GetJobByPublisher"><i class="fa fa-briefcase"></i> Who Are Applyed at Your Jobs</a>
+                        }
+
+                    </li>
+                    <li><a href="~/Account/EditProfile"><i class="fa fa-cog"></i> Edit Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:document.getElementById('logoff').submit()"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+                </ul>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a class="In" href="~/Account/Login"><i class="fa fa-user"></i> SIGN IN</a></li>
+        <li><a class="In" href="~/Account/Register"><i class="fa fa-user-plus"></i> BE USER</a></li>
+    </ul>
+}
+

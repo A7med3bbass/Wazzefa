@@ -1,0 +1,37 @@
+﻿@model IEnumerable<JobsForYou.Models.JobsViewModel>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+               Who Apply To Your Jobs
+            </div>
+        </div>
+        <div class="col-lg-12 col-sm-6">
+            @foreach (var Gr in Model)
+            {
+                <table class="table table-bordered table-white">
+                    <tr>
+                      <th>Job</th>
+                      <th>Person</th>
+                      <th>Phone</th>
+                      <th>Country</th>
+                      @*<th>message</th>*@                     
+                      <th>Profile Picture</th>
+                    </tr>
+                    @foreach (var item in Gr.items)
+                    {
+                        <tr>
+                          <td>@item.job.JobTitle</td>
+                          <td><a href="#">@item.user.UserName</a></td>
+                          <td>@item.user.phone</td>
+                          <td>@item.user.Country</td>
+                          @*<td>@item.message</td>*@
+                          <td><img src="~/UserImages/@item.user.UserImage" class="thumbnail pro-img" /></td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+    </div>
+</div>

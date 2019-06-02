@@ -1,0 +1,44 @@
+﻿@model IEnumerable<JobsForYou.Models.Job>
+
+@{
+    ViewBag.Title = "Jobs";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="alert alert-info">
+                <h2>This Is All Jobs</h2>
+                <p>@Html.ActionLink("Create New", "Create", new { @class = "btn btn-primary" })</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="job-show">
+        @foreach (var job in Model)
+                    {
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="con">
+                        <div class="cat-list">
+                            <div class="cat-details">
+                                <h4><a href="#">@job.JobTitle</a></h4>
+                                <p class="parag">@job.JobDesc<span> ' <time class="timeago" title="@job.TimeAdd" datetime="@job.TimeAdd"></time></span></p>
+                            </div>
+                            <div class="pic">
+                                <img src="~/JobImages/@job.JobImage" class="thumbnail" />
+                            </div>
+                        </div>
+                        <hr />
+                        @Html.ActionLink("more details", "Details","Home", new { jobId = job.JobId }, new { @class = "my-btn-details" })
+                    </div>
+                </div>
+            </div>
+                    }
+    </div>
+</div>
+
+<script src="~/JS/jquery.js"></script>
+<script src="~/JS/jquery.timeago.js"></script>
+<script src="~/JS/JsForSite.js"></script>
